@@ -1551,6 +1551,12 @@ def configure_scheduler():
     scheduler_opts['logtostderr'] = 'true'
     scheduler_opts['master'] = 'http://127.0.0.1:8080'
 
+    if hookenv.config('enable-gpusharing'): 
+       # render custom scheduler policy
+       policy_path='/var/snap/kube-scheduler'
+       render('scheduler-policy-config.json',os.path.join(policy_path,'scheduler-policy-config.json'),{},perms=0o777) 
+       scheduler_opts['policy-config-file'] = '/var/snap/kube-scheduler/scheduler-policy-config.json'
+
     configure_kubernetes_service(configure_prefix, 'kube-scheduler',
                                  scheduler_opts, 'scheduler-extra-args')
 
@@ -1991,7 +1997,7 @@ def keystone_config():
         generate_keystone_configmap()
         set_state('keystone.credentials.configured')
 
-@when('kubernetes-master.components.started','docker.available')
+@when('kubernetes-master.components.started','docker.available','cni.available')
 @when_not('gpusharing.configured')
 def enable_gpu_sharing():
    ''' enables gpu sharing in kubernetes '''
@@ -2000,9 +2006,13 @@ def enable_gpu_sharing():
    if gpuEnable:
       hookenv.status_set('blocked','Nvidia device plugin must be disabled')
       return  
-   if hookenv.config('enable-gpu-sharing'):      
+   if hookenv.config('enable-gpusharing'):      
       gpusharing_build_scheduler()
       gpusharing_start_system_services()
+      if not gpusharing_check_services():
+         hookenv.status_set('maintenance', 'gpusharing service not up!')
+         remove_state('gpusharing.configured')
+         return
       gpusharing_apply_device_plugin()
       set_state('gpusharing.configured')
 
@@ -2014,10 +2024,22 @@ def gpusharing_label_nodes():
    hookenv.log(nodes,hookenv.DEBUG)
    for name in nodes:
       try:
-         if 'gpu=true' in check_output([kubectl,'describe',name]).decode():
+         output = check_output([kubectl,'describe',name]).decode() 
+         if 'gpu=true' in output and 'gpushare=true' not in output:
             check_output([kubectl,'label',name,'gpushare=true'])
       except:
          continue
+
+@retry(times=3, delay_secs=10)
+def gpusharing_check_services():
+   try:
+      if 'active' in check_output(['systemctl','is-active','gpushare-sche-extender.service']).decode() and \
+         'policy-config' in check_output(['ps','-fC','kube-scheduler']).decode():
+         return True
+      else:
+         return False
+   except:
+      return False
 
 def gpusharing_apply_device_plugin():
    kubectl='/snap/kubectl/current/kubectl'
@@ -2039,16 +2061,7 @@ def gpusharing_start_system_services():
       '/etc/systemd/ssytem/gpushare-sche-extender.service.d',
       {},perms=0o777)
 
-   # render scheduler policy
-   policy_path='/var/snap/kube-scheduler'
-   render('scheduler-policy-config.json',os.path.join(policy_path,'scheduler-policy-config.json'),{},perms=0o777) 
-   kubescheduler_config=''
-   for root,dirs,files in os.walk(policy_path):
-      if 'args' in files:
-         kubescheduler_config=os.path.join(root,'args')
-   render('kubescheduler-args',kubescheduler_config,{},perms=0o777)
-
-   # enable/start/resteart services    
+   # start/resteart services    
    check_call(['systemctl','start','gpushare-sche-extender.service'])
    check_call(['systemctl','enable','gpushare-sche-extender.service'])
    check_call(['systemctl','restart','snap.kube-scheduler.daemon'])
