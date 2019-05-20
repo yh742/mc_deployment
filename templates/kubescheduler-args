@@ -1,0 +1,4 @@
+--master="http://127.0.0.1:8080"
+--logtostderr
+--v="2"
+--policy-config-file=/var/snap/kube-scheduler/scheduler-policy-config.json

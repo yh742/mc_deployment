@@ -1991,15 +1991,75 @@ def keystone_config():
         generate_keystone_configmap()
         set_state('keystone.credentials.configured')
 
-@when('kubernetes-master.cloud.ready','docker.available')
+@when('kubernetes-master.components.started','docker.available')
 @when_not('gpusharing.configured')
 def enable_gpu_sharing():
    ''' enables gpu sharing in kubernetes '''
    load_gpu_plugin = hookenv.config('enable-nvidia-plugin').lower()
-   gpuEnable = load_gpu_plugin == "auto" and 
-      is_state('kubernetes=master.gpu.enabled')
+   gpuEnable = load_gpu_plugin == "auto" and is_state('kubernetes=master.gpu.enabled')
    if gpuEnable:
       hookenv.status_set('blocked','Nvidia device plugin must be disabled')
       return  
-   call(['./templates/gpushare-sche-extender.build.sh'])
-   set_state('gpusharing.configured')
+   if hookenv.config('enable-gpu-sharing'):      
+      gpusharing_build_scheduler()
+      gpusharing_start_system_services()
+      gpusharing_apply_device_plugin()
+      set_state('gpusharing.configured')
+
+@when('gpusharing.configured')
+def gpusharing_label_nodes():
+   kubectl='/snap/kubectl/current/kubectl'
+   nodes=check_output([kubectl,'get','nodes','-o','name'])
+   nodes=nodes.decode().split('\n')[:-1]
+   hookenv.log(nodes,hookenv.DEBUG)
+   for name in nodes:
+      try:
+         if 'gpu=true' in check_output([kubectl,'describe',name]).decode():
+            check_output([kubectl,'label',name,'gpushare=true'])
+      except:
+         continue
+
+def gpusharing_apply_device_plugin():
+   kubectl='/snap/kubectl/current/kubectl'
+   render('device-plugin-rbac.yaml','device-plugin-rbac.yaml',{},perms=0o777) 
+   render('device-plugin-ds.yaml','device-plugin-ds.yaml',{},perms=0o777) 
+   check_output([kubectl,'apply','-f','device-plugin-rbac.yaml'])
+   check_output([kubectl,'apply','-f','device-plugin-ds.yaml'])
+
+def gpusharing_start_system_services():
+   # render service files 
+   render('gpushare-sche-extender.service',
+      '/etc/systemd/system/gpushare-sche-extender.service',
+      {}, perms=0o777)
+   if not os.path.exists('/etc/systemd/system/gpushare-sche-extender.service.d'):
+      os.mkdir('/etc/systemd/system/gpushare-sche-extender.service.d')
+
+   # make sure service always restarts
+   render('service-always-restart.systemd-latest.conf',
+      '/etc/systemd/ssytem/gpushare-sche-extender.service.d',
+      {},perms=0o777)
+
+   # render scheduler policy
+   policy_path='/var/snap/kube-scheduler'
+   render('scheduler-policy-config.json',os.path.join(policy_path,'scheduler-policy-config.json'),{},perms=0o777) 
+   kubescheduler_config=''
+   for root,dirs,files in os.walk(policy_path):
+      if 'args' in files:
+         kubescheduler_config=os.path.join(root,'args')
+   render('kubescheduler-args',kubescheduler_config,{},perms=0o777)
+
+   # enable/start/resteart services    
+   check_call(['systemctl','start','gpushare-sche-extender.service'])
+   check_call(['systemctl','enable','gpushare-sche-extender.service'])
+   check_call(['systemctl','restart','snap.kube-scheduler.daemon'])
+
+def gpusharing_build_scheduler():
+   if not os.path.exists('gpusharing'):
+      check_call(['git','clone','https://github.com/AliyunContainerService/gpushare-scheduler-extender.git','gpusharing'])
+   call(['docker','image','rm','-f','gpushare'])
+   check_call(['docker','image','build','gpusharing/','-t','gpushare'])
+   call(['docker','container','rm','-f','gpushare-build'])
+   check_call(['docker','run','--name','gpushare-build','-dit','gpushare','/bin/bash'])
+   check_call(['docker','cp','gpushare-build:/usr/bin/gpushare-sche-extender','.'])
+   check_call(['mv','gpushare-sche-extender','/usr/bin'])
+   call(['docker','container','rm','-f','gpushare-build']) 

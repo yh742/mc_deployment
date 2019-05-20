@@ -1,0 +1,11 @@
+[Unit]
+Description=Service for gpushare-sche-extender
+[Service]
+Environment="KUBECONFIG=/home/ubuntu/config"
+ExecStart=/usr/bin/gpushare-sche-extender
+SyslogIdentifier=gpushare-sche-extender
+Restart=on-failure
+TimeoutStopSec=30
+Type=simple
+[Install]
+WantedBy=multi-user.target
