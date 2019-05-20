@@ -10,6 +10,7 @@
 - "layer:metrics"
 - "layer:nagios"
 - "layer:cdk-service-kicker"
+- "layer:docker"
 - "layer:kubernetes-common"
 - "interface:ceph-admin"
 - "interface:etcd"

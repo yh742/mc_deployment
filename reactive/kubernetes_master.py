@@ -29,6 +29,7 @@ from charms.leadership import leader_get, leader_set
 
 from shutil import move, copyfile
 from pathlib import Path
+from subprocess import call
 from subprocess import check_call
 from subprocess import check_output
 from subprocess import CalledProcessError
@@ -1989,3 +1990,16 @@ def keystone_config():
             create_self_config(ca, client)
         generate_keystone_configmap()
         set_state('keystone.credentials.configured')
+
+@when('kubernetes-master.cloud.ready','docker.available')
+@when_not('gpusharing.configured')
+def enable_gpu_sharing():
+   ''' enables gpu sharing in kubernetes '''
+   load_gpu_plugin = hookenv.config('enable-nvidia-plugin').lower()
+   gpuEnable = load_gpu_plugin == "auto" and 
+      is_state('kubernetes=master.gpu.enabled')
+   if gpuEnable:
+      hookenv.status_set('blocked','Nvidia device plugin must be disabled')
+      return  
+   call(['./templates/gpushare-sche-extender.build.sh'])
+   set_state('gpusharing.configured')

@@ -287,3 +287,9 @@
     "description": |
       Path to Keystone certificate authority for securing communications to Keystone.
     "default": ""
+  "enable-gpu-sharing":
+    "type": "boolean"
+    "default": !!bool "true"
+    "description": |
+      Enables gpusharing on clusters with gpu nodes.
+      For more info, please refer to https://github.com/AliyunContainerService/gpushare-scheduler-extender
