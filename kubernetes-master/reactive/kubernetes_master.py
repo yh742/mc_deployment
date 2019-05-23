@@ -81,7 +81,7 @@ from charms.layer.kubernetes_common import retry
 nrpe.Check.shortname_re = r'[\.A-Za-z0-9-_]+$'
 
 snap_resources = ['kubectl', 'kube-apiserver', 'kube-controller-manager',
-                  'kube-scheduler', 'cdk-addons', 'kube-proxy']
+                  'kube-scheduler', 'cdk-addon-mod', 'kube-proxy']
 
 master_services = ['kube-apiserver',
                    'kube-controller-manager',
@@ -280,8 +280,8 @@ def install_snaps():
     snap.install('kube-controller-manager', channel=channel)
     hookenv.status_set('maintenance', 'Installing kube-scheduler snap')
     snap.install('kube-scheduler', channel=channel)
-    hookenv.status_set('maintenance', 'Installing cdk-addons snap')
-    snap.install('cdk-addons', channel=channel)
+    hookenv.status_set('maintenance', 'Installing cdk-addon-mods snap')
+    snap.install('cdk-addon-mod')
     hookenv.status_set('maintenance', 'Installing kube-proxy snap')
     snap.install('kube-proxy', channel=channel, classic=True)
     calculate_and_store_resource_checksums(checksum_prefix, snap_resources)
@@ -864,7 +864,7 @@ def configure_cdk_addons():
         'keystone-server-url=' + keystone.get('url', ''),
         'keystone-server-ca=' + keystone.get('keystone-ca', '')
     ]
-    check_call(['snap', 'set', 'cdk-addons'] + args)
+    check_call(['snap', 'set', 'cdk-addon-mod'] + args)
     if not addons_ready():
         remove_state('cdk-addons.configured')
         return
@@ -885,7 +885,7 @@ def addons_ready():
 
     """
     try:
-        check_call(['cdk-addons.apply'])
+        check_call(['cdk-addon-mod.apply'])
         return True
     except CalledProcessError:
         hookenv.log("Addons are not ready yet.")
