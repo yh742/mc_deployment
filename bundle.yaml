@@ -1,0 +1,140 @@
+series: xenial
+services:
+  easyrsa:
+    charm: cs:~containers/easyrsa-185
+    num_units: 1
+    resources:
+      easyrsa: 5
+    to:
+      - "0"
+  etcd:
+    charm: cs:~containers/etcd-319
+    options:
+      channel: 3.2/stable
+    resources:
+      etcd: 3
+      snapshot: 0
+    num_units: 1
+    to:
+      - "0"
+  flannel:
+    charm: cs:~containers/flannel-340
+    resources:
+      flannel-amd64: 103
+      flannel-arm64: 103
+      flannel-s390x: 89
+  kubeapi-load-balancer:
+    charm: cs:~containers/kubeapi-load-balancer-503
+    expose: true
+    num_units: 1
+    to:
+      - "0"
+  kubernetes-master:
+    charm: ./kubernetes-master
+    num_units: 1
+    options:
+      channel: 1.12/stable
+      allow-privileged: "true"
+      enable-nvidia-plugin: "false"
+    to: 
+      - "1"
+  kubernetes-worker:
+    charm: cs:~containers/kubernetes-worker-378
+    expose: true
+    num_units: 2
+    options:
+      channel: 1.12/stable
+      allow-privileged: "true"
+    to:
+      - "2"
+      - "3"
+  ceph-mon:
+    charm: cs:ceph-mon-34
+    series: xenial
+    num_units: 3
+    constraints: tags=ceph-mon
+  ceph-osd:
+    charm: cs:ceph-osd-278
+    series: xenial
+    num_units: 3
+    constraints: tags=ceph-osd
+  ceph-fs:
+    charm: cs:ceph-fs-18
+    series: xenial
+    num_units: 1
+    constraints: tags=ceph-fs
+  kibana:
+    charm: cs:kibana-19
+    series: xenial
+    num_units: 1
+    constraints: tags=kibana
+  elasticsearch:
+    charm: cs:elasticsearch-37
+    series: xenial
+    num_units: 1
+    constraints: tags=elasticsearch
+  filebeat:
+    charm: cs:filebeat-20
+    options:
+      kube_logs: true
+  topbeat:
+    charm: cs:topbeat-8 
+relations:
+- - kubernetes-worker:juju-info
+  - topbeat:beats-host
+- - kubernetes-master:juju-info
+  - topbeat:beats-host
+- - kubernetes-worker:juju-info
+  - filebeat:beats-host
+- - kubernetes-master:juju-info
+  - filebeat:beats-host
+- - kibana:rest
+  - elasticsearch:client
+- - filebeat:elasticsearch
+  - elasticsearch:client
+- - topbeat:elasticsearch
+  - elasticsearch:client
+- - ceph-mon:admin
+  - kubernetes-master:ceph-storage
+- - ceph-mon:mds
+  - ceph-fs:ceph-mds
+- - ceph-mon:osd
+  - ceph-osd:mon
+- - kubernetes-master:kube-api-endpoint
+  - kubeapi-load-balancer:apiserver
+- - kubernetes-master:loadbalancer
+  - kubeapi-load-balancer:loadbalancer
+- - kubernetes-master:kube-control
+  - kubernetes-worker:kube-control
+- - kubernetes-master:certificates
+  - easyrsa:client
+- - etcd:certificates
+  - easyrsa:client
+- - kubernetes-master:etcd
+  - etcd:db
+- - kubernetes-worker:certificates
+  - easyrsa:client
+- - kubernetes-worker:kube-api-endpoint
+  - kubeapi-load-balancer:website
+- - kubeapi-load-balancer:certificates
+  - easyrsa:client
+- - flannel:etcd
+  - etcd:db
+- - flannel:cni
+  - kubernetes-master:cni
+- - flannel:cni
+  - kubernetes-worker:cni
+machines:
+  "0":
+    series: xenial
+    constraints: arch=amd64 tags=test-sean
+  "1":
+    series: xenial
+    constraints: arch=amd64 tags=test-sean
+  "2":
+    series: xenial
+    constraints: arch=amd64 tags=test-sean
+  "3":
+    series: xenial
+    constraints: arch=amd64 tags=test-sean,gpu
+      

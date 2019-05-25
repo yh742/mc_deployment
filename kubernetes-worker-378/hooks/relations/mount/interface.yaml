@@ -1,0 +1,4 @@
+name: mount
+summary: Interface for mounting filesystems like NFS.
+version: 1
+maintainer: Mike Wilson <mike.wilson@canonical.com>

@@ -1,0 +1,1802 @@
+{
+  "layers": [
+    {
+      "rev": "fcdcea4e5de3e1556c24e6704607862d0ba00a56",
+      "url": "layer:options"
+    },
+    {
+      "rev": "1e25cf7d63285f222207efb4b189f8c076b78b2d",
+      "url": "layer:basic"
+    },
+    {
+      "rev": "527dd64fc4b9a6b0f8d80a3c2c0b865155050275",
+      "url": "layer:debug"
+    },
+    {
+      "rev": "1af76d06fe578afefd790dd4f4d09a535141d8f9",
+      "url": "layer:snap"
+    },
+    {
+      "rev": "295a54b97e7f47ee9a18e78b46f443d3963a6ad3",
+      "url": "layer:tls-client"
+    },
+    {
+      "rev": "899242c9e3adb3f682ec9db9bc0acdb4b083cfbb",
+      "url": "layer:leadership"
+    },
+    {
+      "rev": "f491ebe32b503c9712d2f8cd602dcce18f4aab46",
+      "url": "layer:metrics"
+    },
+    {
+      "rev": "3bb3f2c944ec82843d04abc26b31da39411d64aa",
+      "url": "layer:nagios"
+    },
+    {
+      "rev": "b60102068c6f0ddbeaf8a308549a3e88cfa35688",
+      "url": "layer:cdk-service-kicker"
+    },
+    {
+      "rev": "92a6aa8ac616ec0c01b2e6109dd4e98940243a3d",
+      "url": "layer:docker"
+    },
+    {
+      "rev": "cda05cfceb864f7488483e791470473db85cca36",
+      "url": "layer:kubernetes-common"
+    },
+    {
+      "rev": null,
+      "url": "kubernetes-master"
+    },
+    {
+      "rev": "04e38b729f508329695b9478dbecb1168b9df43c",
+      "url": "interface:tls-certificates"
+    },
+    {
+      "rev": "2e0e1fdea6d83b55078200aacb537d60013ec5bc",
+      "url": "interface:nrpe-external-master"
+    },
+    {
+      "rev": "4ebe4c86cb65a3a63c961d17a482181fc216c668",
+      "url": "interface:dockerhost"
+    },
+    {
+      "rev": "54211e7972bebdc6111170603d8161d04f6f9f86",
+      "url": "interface:sdn-plugin"
+    },
+    {
+      "rev": "20279348ce7c53d69fe52cd1005b44054fc9ef5c",
+      "url": "interface:ceph-admin"
+    },
+    {
+      "rev": "44f244cbd08b86bf2b68bd71c3fb34c7c070c382",
+      "url": "interface:etcd"
+    },
+    {
+      "rev": "632131b1f122daf6fb601fd4c9f1e4dbb1a92e09",
+      "url": "interface:http"
+    },
+    {
+      "rev": "3e8ca21923d964fd5c428ec2bca41c7d9902a655",
+      "url": "interface:kubernetes-cni"
+    },
+    {
+      "rev": "0183e7612aa158143cfd859e65487b26712ff398",
+      "url": "interface:kube-dns"
+    },
+    {
+      "rev": "9324f85d39122dbea9149b1103cb3f0b13344f0e",
+      "url": "interface:kube-control"
+    },
+    {
+      "rev": "964670e8df4d904e77d76cfb84640e617b02d87f",
+      "url": "interface:public-address"
+    },
+    {
+      "rev": "3fd9342bef41d909f89f7243597e5eef6894790b",
+      "url": "interface:aws-integration"
+    },
+    {
+      "rev": "d8f093cb2930edf5f93678253dca2da70b73b4fb",
+      "url": "interface:gcp-integration"
+    },
+    {
+      "rev": "874ae3d9c681a8b54851b80b80acdb46a118c44b",
+      "url": "interface:openstack-integration"
+    },
+    {
+      "rev": "d5caea55ced6785f391215ee457c3a964eaf3f4b",
+      "url": "interface:vsphere-integration"
+    },
+    {
+      "rev": "edefb4034a363aed7db0e3a7261b1ebc627b19a9",
+      "url": "interface:azure-integration"
+    },
+    {
+      "rev": "e1053da8b9b81a1edf096a9ed76898b0a3f2d1a5",
+      "url": "interface:keystone-credentials"
+    }
+  ],
+  "signatures": {
+    ".build.manifest": [
+      "build",
+      "dynamic",
+      "unchecked"
+    ],
+    ".gitignore": [
+      "layer:docker",
+      "static",
+      "ee56e2e0ee5fd639ede55a25c9d619d08ec69f3287b36d542046d97a4d908a56"
+    ],
+    ".travis.yml": [
+      "layer:docker",
+      "static",
+      "1203abe6ff45f695c3826acbec6dd6f42b724c20d45867777cefcd3c3e86d77b"
+    ],
+    "LICENSE": [
+      "kubernetes-master",
+      "static",
+      "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    ],
+    "Makefile": [
+      "kubernetes-master",
+      "static",
+      "b7ab3a34e5faf79b96a8632039a0ad0aa87f2a9b5f0ba604e007cafb22190301"
+    ],
+    "README.md": [
+      "kubernetes-master",
+      "static",
+      "5c7eae6a559f820a9dc95ef66f59ffac48cb75a6015c2b71f9e49962f9b0228e"
+    ],
+    "actions.yaml": [
+      "kubernetes-master",
+      "dynamic",
+      "7f632c5e410ccc163151a68a7fbac36c1ac37fc6efcc004040c5df472a0c3646"
+    ],
+    "actions/clean-containers": [
+      "layer:docker",
+      "static",
+      "bb65a39fa8310c215754e9d867be0062943ab33ecc1c058b5d234eb136725b58"
+    ],
+    "actions/clean-images": [
+      "layer:docker",
+      "static",
+      "1f1466a04d11b2c6dfe3c46a7f6f6a24bacfcc44220c79480c9d94871127e0a3"
+    ],
+    "actions/create-rbd-pv": [
+      "kubernetes-master",
+      "static",
+      "fb73bfe7995f78bfe86bc28d5e0662897fe78dbb8d932e423f5b48546b1229c3"
+    ],
+    "actions/debug": [
+      "kubernetes-master",
+      "static",
+      "db0a42dae4c5045b2c06385bf22209dfe0e2ded55822ef847d84b01d9ff2b046"
+    ],
+    "actions/namespace-create": [
+      "kubernetes-master",
+      "static",
+      "e5d18a01409ddcb74e31d457f135ebc0012b4be132e13ce0c0bc63e3c74a0722"
+    ],
+    "actions/namespace-delete": [
+      "kubernetes-master",
+      "static",
+      "e5d18a01409ddcb74e31d457f135ebc0012b4be132e13ce0c0bc63e3c74a0722"
+    ],
+    "actions/namespace-list": [
+      "kubernetes-master",
+      "static",
+      "e5d18a01409ddcb74e31d457f135ebc0012b4be132e13ce0c0bc63e3c74a0722"
+    ],
+    "actions/restart": [
+      "kubernetes-master",
+      "static",
+      "72cb46d4971f057fdbbc901599a735a7ce3d61e7ae9b2687c9e9b4cd478e26d0"
+    ],
+    "actions/upgrade": [
+      "kubernetes-master",
+      "static",
+      "111c15b7fd3518e83066f526b86a2a7eff1d0ad1f7ed114a49d3c3d6375889c2"
+    ],
+    "actions/upgrade-docker": [
+      "layer:docker",
+      "static",
+      "87d9114c2dfd62a27604af3e3595b5713d1f8d76fe96d388f7e923d35350bd91"
+    ],
+    "bin/charm-env": [
+      "kubernetes-master",
+      "static",
+      "09126ccb5849fa7c821a1fd0940ab794f32b5bde22956d043619596a34c974e4"
+    ],
+    "bin/layer_option": [
+      "kubernetes-master",
+      "static",
+      "e959bf29da4c5edff28b2602c24113c4df9e25cdc9f2aa3b5d46c8577b2a40cc"
+    ],
+    "config.yaml": [
+      "kubernetes-master",
+      "dynamic",
+      "ee3cc9a2af761d6c48cfbbedaf29e16da5a10513765d023b4054f4cfac266574"
+    ],
+    "copyright": [
+      "kubernetes-master",
+      "static",
+      "1eedc4e165789729bc492abd80e34ac85dcb0ec429eebdf225129b9b0bfc3502"
+    ],
+    "copyright.layer-basic": [
+      "kubernetes-master",
+      "static",
+      "f6740d66fd60b60f2533d9fcb53907078d1e20920a0219afce7182e2a1c97629"
+    ],
+    "copyright.layer-docker": [
+      "layer:docker",
+      "static",
+      "9df2e45ab462058f6afef45b26c5c2a4a40e55c71e36dd3dd184e39d8e4e5413"
+    ],
+    "copyright.layer-leadership": [
+      "kubernetes-master",
+      "static",
+      "8ce407829378fc0f72ce44c7f624e4951c7ccb3db1cfb949bee026b701728cc9"
+    ],
+    "copyright.layer-metrics": [
+      "kubernetes-master",
+      "static",
+      "08509dcbade4c20761ba4382ef23c831744dbab1d4a8dd94a1c2b4d4e913334c"
+    ],
+    "copyright.layer-nagios": [
+      "kubernetes-master",
+      "static",
+      "47b2363574909e748bcc471d9004780ac084b301c154905654b5b6f088474749"
+    ],
+    "copyright.layer-options": [
+      "kubernetes-master",
+      "static",
+      "f6740d66fd60b60f2533d9fcb53907078d1e20920a0219afce7182e2a1c97629"
+    ],
+    "copyright.layer-snap": [
+      "kubernetes-master",
+      "static",
+      "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    ],
+    "debug-scripts/charm-unitdata": [
+      "kubernetes-master",
+      "static",
+      "c952b9d31f3942e4e722cb3e70f5119707b69b8e76cc44e2e906bc6d9aef49b7"
+    ],
+    "debug-scripts/docker": [
+      "layer:docker",
+      "static",
+      "81af41323abee1d29e04c0ed3222b02ef99e868e98a7491f74541666e471e803"
+    ],
+    "debug-scripts/filesystem": [
+      "kubernetes-master",
+      "static",
+      "d29cc8687f4422d024001c91b1ac756ee6bf8a2a125bc98db1199ba775eb8fd7"
+    ],
+    "debug-scripts/juju-logs": [
+      "kubernetes-master",
+      "static",
+      "d260b35753a917368cb8c64c1312546a0a40ef49cba84c75bc6369549807c55e"
+    ],
+    "debug-scripts/juju-network-get": [
+      "kubernetes-master",
+      "static",
+      "6d849a1f8e6569bd0d5ea38299f7937cb8b36a5f505e3532f6c756eabeb8b6c5"
+    ],
+    "debug-scripts/kubectl": [
+      "kubernetes-master",
+      "static",
+      "175db009e60c09ba744c5c75f948da119d9042f37bd3f915b0e197335b97e0b0"
+    ],
+    "debug-scripts/kubernetes-master-services": [
+      "kubernetes-master",
+      "static",
+      "f9930483765f715098c7e6a6b21e08105aff7dea4ecddc68fb8b6480951242d3"
+    ],
+    "debug-scripts/network": [
+      "kubernetes-master",
+      "static",
+      "714afae5dcb45554ff1f05285501e3b7fcc656c8de51217e263b93dab25a9d2e"
+    ],
+    "debug-scripts/packages": [
+      "kubernetes-master",
+      "static",
+      "e8177102dc2ca853cb9272c1257cf2cfd5253d2a074e602d07c8bc4ea8e27c75"
+    ],
+    "debug-scripts/sysctl": [
+      "kubernetes-master",
+      "static",
+      "990035b320e09cc2228e1f2f880e795d51118b2959339eacddff9cbb74349c6a"
+    ],
+    "debug-scripts/systemd": [
+      "kubernetes-master",
+      "static",
+      "23ddf533198bf5b1ce723acde31ada806aab8539292b514c721d8ec08af74106"
+    ],
+    "debug-scripts/tls-certs": [
+      "kubernetes-master",
+      "static",
+      "ebf7f23ef6e39fb8e664bac2e9429e32aaeb673b4a51751724b835c007e85d3b"
+    ],
+    "exec.d/docker-compose/charm-pre-install": [
+      "layer:docker",
+      "static",
+      "aa6608fea1a87e2de3365271dd807f8fc52ed97916e35ae6cd9ab392315f71d8"
+    ],
+    "exec.d/vmware-patch/charm-pre-install": [
+      "kubernetes-master",
+      "static",
+      "9f98f70669ddd949ff83c7b408b678ae170bf41e4faa2828b4d66bd47acca93e"
+    ],
+    "hooks/aws-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/aws-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/aws-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/aws-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/azure-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/azure-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/azure-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/azure-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/ceph-storage-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/ceph-storage-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/ceph-storage-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/ceph-storage-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/certificates-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/certificates-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/certificates-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/certificates-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/cluster-dns-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/cluster-dns-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/cluster-dns-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/cluster-dns-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/cni-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/cni-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/cni-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/cni-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/collect-metrics": [
+      "kubernetes-master",
+      "static",
+      "28625f52430ff52fed68a51838b3b794344ac4357b4f49346651db867d36a451"
+    ],
+    "hooks/config-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/dockerhost-relation-broken": [
+      "kubernetes-master",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/dockerhost-relation-changed": [
+      "kubernetes-master",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/dockerhost-relation-departed": [
+      "kubernetes-master",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/dockerhost-relation-joined": [
+      "kubernetes-master",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/etcd-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/etcd-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/etcd-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/etcd-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/gcp-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/gcp-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/gcp-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/gcp-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/hook.template": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/install": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/keystone-credentials-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/keystone-credentials-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/keystone-credentials-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/keystone-credentials-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/kube-api-endpoint-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/kube-api-endpoint-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/kube-api-endpoint-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/kube-api-endpoint-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/kube-control-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/kube-control-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/kube-control-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/kube-control-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/leader-elected": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/leader-settings-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/loadbalancer-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/loadbalancer-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/loadbalancer-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/loadbalancer-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/nrpe-external-master-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/nrpe-external-master-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/nrpe-external-master-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/nrpe-external-master-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/openstack-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/openstack-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/openstack-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/openstack-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/post-series-upgrade": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/pre-series-upgrade": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/relations/aws-integration/.gitignore": [
+      "interface:aws-integration",
+      "static",
+      "315971ad9cc5d6ada2391f0940e1800149b211a18be3c7a8f396735d7978702b"
+    ],
+    "hooks/relations/aws-integration/LICENSE": [
+      "interface:aws-integration",
+      "static",
+      "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    ],
+    "hooks/relations/aws-integration/README.md": [
+      "interface:aws-integration",
+      "static",
+      "1585d72b136158ce0741fc2ce0d7710c1ec55662f846afe2e768a4708c51057e"
+    ],
+    "hooks/relations/aws-integration/__init__.py": [
+      "interface:aws-integration",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/aws-integration/copyright": [
+      "interface:aws-integration",
+      "static",
+      "7c0e36e618a8544faaaa3f8e0533c2f1f4a18bcacbdd8b99b537742e6b587d58"
+    ],
+    "hooks/relations/aws-integration/docs/provides.md": [
+      "interface:aws-integration",
+      "static",
+      "a7669f49156173c27ede87105f6e65a07e1e5e41f3c154a24e1a82f307f65073"
+    ],
+    "hooks/relations/aws-integration/docs/requires.md": [
+      "interface:aws-integration",
+      "static",
+      "09553e5f07f216e5234125fdf38a21af00ab11349cdb788b21703ae72b0aeed1"
+    ],
+    "hooks/relations/aws-integration/interface.yaml": [
+      "interface:aws-integration",
+      "static",
+      "4449f48e5aaa99c0bb3e8e1c9833d11d3b20fc5f81ae1f15b6442af5ec873167"
+    ],
+    "hooks/relations/aws-integration/make_docs": [
+      "interface:aws-integration",
+      "static",
+      "b471fefc7eaa5c377d47b2b63481d6c8f4c5e9d224428efe93c5abbd13a0817d"
+    ],
+    "hooks/relations/aws-integration/provides.py": [
+      "interface:aws-integration",
+      "static",
+      "ee8f91b281d9112999f3d0e1d2ac17964fca3af5102fe5b072f3f3659b932ab7"
+    ],
+    "hooks/relations/aws-integration/pydocmd.yml": [
+      "interface:aws-integration",
+      "static",
+      "8c242cde2b2517c74de8ad6b1b90d2f6d97b2eb86c54edaf2eb8a8f7d32913e8"
+    ],
+    "hooks/relations/aws-integration/requires.py": [
+      "interface:aws-integration",
+      "static",
+      "d1261d0fdb11fd7638d4325ff3b5e04a1f4ccbd04d1785edd71485daf635b5a6"
+    ],
+    "hooks/relations/aws-integration/tox.ini": [
+      "interface:aws-integration",
+      "static",
+      "caeace713d04686331d19b2d466e066e4123bd9197152ab99deb1a29a1501502"
+    ],
+    "hooks/relations/azure-integration/.gitignore": [
+      "interface:azure-integration",
+      "static",
+      "9653f2820c79d92ac3518eedd0e1f43ffec128d5df9216c25d906fcba8ee46b8"
+    ],
+    "hooks/relations/azure-integration/LICENSE": [
+      "interface:azure-integration",
+      "static",
+      "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    ],
+    "hooks/relations/azure-integration/README.md": [
+      "interface:azure-integration",
+      "static",
+      "c7799dba9471709e086dcd2ea272ad7a6e33f5058d875ce2bf5b3a6939d4a1e7"
+    ],
+    "hooks/relations/azure-integration/__init__.py": [
+      "interface:azure-integration",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/azure-integration/copyright": [
+      "interface:azure-integration",
+      "static",
+      "7c0e36e618a8544faaaa3f8e0533c2f1f4a18bcacbdd8b99b537742e6b587d58"
+    ],
+    "hooks/relations/azure-integration/docs/provides.md": [
+      "interface:azure-integration",
+      "static",
+      "60ae63187cac32c00d9f462f1723c9487960c728beae871f1a409c92196cc1f5"
+    ],
+    "hooks/relations/azure-integration/docs/requires.md": [
+      "interface:azure-integration",
+      "static",
+      "b01e313c8ce3d02093e851bd84d5e8b7ae77b300c4b06b5048bddc78c1ad3eb3"
+    ],
+    "hooks/relations/azure-integration/interface.yaml": [
+      "interface:azure-integration",
+      "static",
+      "cea5bfd87c278bd3f2e8dc00e654930f06d2bd91ef731a063edea14b04d9128a"
+    ],
+    "hooks/relations/azure-integration/make_docs": [
+      "interface:azure-integration",
+      "static",
+      "e76f4a64c2fdc4a9f97a57d6515b4a25f9404d7043f2792db5206bc44213927c"
+    ],
+    "hooks/relations/azure-integration/provides.py": [
+      "interface:azure-integration",
+      "static",
+      "1af6176dc71436dc8aa1d1e131dc52aa42edfe89944f25613b6ac5237597eafd"
+    ],
+    "hooks/relations/azure-integration/pydocmd.yml": [
+      "interface:azure-integration",
+      "static",
+      "4c17085efb4ec328891b49257413eed4d9a552eeea8e589509e48081effe51ed"
+    ],
+    "hooks/relations/azure-integration/requires.py": [
+      "interface:azure-integration",
+      "static",
+      "1eee19580aa295ecede31923e543110225a2a509a67d497e98055b764b26f363"
+    ],
+    "hooks/relations/azure-integration/tox.ini": [
+      "interface:azure-integration",
+      "static",
+      "608d7d811e935b3502d35d57cc6de7fdc7a9495bb92ac5785610098654860381"
+    ],
+    "hooks/relations/ceph-admin/.gitignore": [
+      "interface:ceph-admin",
+      "static",
+      "38da8f2fbf99eb7b9ec38ea900ed13681803bbfa3482929cfeeaec86c591aa50"
+    ],
+    "hooks/relations/ceph-admin/README.md": [
+      "interface:ceph-admin",
+      "static",
+      "c9b4d0815873320984956e9b1331c08bf5fce990521a548bf1040ebef7704247"
+    ],
+    "hooks/relations/ceph-admin/__init__.py": [
+      "interface:ceph-admin",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/ceph-admin/interface.yaml": [
+      "interface:ceph-admin",
+      "static",
+      "c9dc8e16173423a4a13dbfa247c48d587c08097529a7060e7cd64b75ef53e19c"
+    ],
+    "hooks/relations/ceph-admin/requires.py": [
+      "interface:ceph-admin",
+      "static",
+      "33d576e7033d5b46373d11330df0859224f69a22dc03ad5168f7c90d70bbace5"
+    ],
+    "hooks/relations/dockerhost/__init__.py": [
+      "interface:dockerhost",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/dockerhost/interface.yaml": [
+      "interface:dockerhost",
+      "static",
+      "efedb513f1b7e88d340b11d1e72cf77c24cb00fd4b1f6ea4ff6221e2bdaa2f63"
+    ],
+    "hooks/relations/dockerhost/provides.py": [
+      "interface:dockerhost",
+      "static",
+      "5481bc4e005aa6b77028a1f5c6bd23faf6ce8c537f054c31cdeddf1f68d8eb1d"
+    ],
+    "hooks/relations/dockerhost/requires.py": [
+      "interface:dockerhost",
+      "static",
+      "34b6fbafcade2bbc3726d84bbf9b26ea9e086ed6418ce06536b5dd3317d1acff"
+    ],
+    "hooks/relations/etcd/.gitignore": [
+      "interface:etcd",
+      "static",
+      "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e"
+    ],
+    "hooks/relations/etcd/README.md": [
+      "interface:etcd",
+      "static",
+      "93873d073f5f5302d352e09321aaf87458556e9730f89e1c682699c1d0db2386"
+    ],
+    "hooks/relations/etcd/__init__.py": [
+      "interface:etcd",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/etcd/interface.yaml": [
+      "interface:etcd",
+      "static",
+      "ba9f723b57a434f7efb2c06abec4167cd412c16da5f496a477dd7691e9a715be"
+    ],
+    "hooks/relations/etcd/peers.py": [
+      "interface:etcd",
+      "static",
+      "99419c3d139fb5bb90021e0482f9e7ac2cfb776fb7af79b46209c6a75b36e834"
+    ],
+    "hooks/relations/etcd/provides.py": [
+      "interface:etcd",
+      "static",
+      "3db1f644ab669e2dec59d59b61de63b721bc05b38fe646e525fff8f0d60982f9"
+    ],
+    "hooks/relations/etcd/requires.py": [
+      "interface:etcd",
+      "static",
+      "8ffc1a094807fd36a1d1428b0a07b2428074134d46086066ecd6c0acd9fcd13e"
+    ],
+    "hooks/relations/gcp-integration/.gitignore": [
+      "interface:gcp-integration",
+      "static",
+      "9653f2820c79d92ac3518eedd0e1f43ffec128d5df9216c25d906fcba8ee46b8"
+    ],
+    "hooks/relations/gcp-integration/LICENSE": [
+      "interface:gcp-integration",
+      "static",
+      "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    ],
+    "hooks/relations/gcp-integration/README.md": [
+      "interface:gcp-integration",
+      "static",
+      "dab3f4a03f02dec0095883054780e3e3f1bf63262b06a9fd499364a3db8b1e97"
+    ],
+    "hooks/relations/gcp-integration/__init__.py": [
+      "interface:gcp-integration",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/gcp-integration/copyright": [
+      "interface:gcp-integration",
+      "static",
+      "7c0e36e618a8544faaaa3f8e0533c2f1f4a18bcacbdd8b99b537742e6b587d58"
+    ],
+    "hooks/relations/gcp-integration/docs/provides.md": [
+      "interface:gcp-integration",
+      "static",
+      "a67cda4094b4d601c8de63cf099ba2e83fecf3a8382e88f44e58b98be8872fa6"
+    ],
+    "hooks/relations/gcp-integration/docs/requires.md": [
+      "interface:gcp-integration",
+      "static",
+      "d7e6d7dc90b74d35bf2bd10b00b3ba289ab856dc79ec51046508a85b9dda35a3"
+    ],
+    "hooks/relations/gcp-integration/interface.yaml": [
+      "interface:gcp-integration",
+      "static",
+      "368e8ade9267b905dcb2e6843e7ed61bd6d246f0b0c18942e729f546d5db2260"
+    ],
+    "hooks/relations/gcp-integration/make_docs": [
+      "interface:gcp-integration",
+      "static",
+      "5bf011da5045c31da97a67b8633d30ea90adc6c0d4d823f839fce6e07e5fe222"
+    ],
+    "hooks/relations/gcp-integration/provides.py": [
+      "interface:gcp-integration",
+      "static",
+      "839f15cf978cf94343772889846ad3e2b8375372ef25ed08036207e5608b1f48"
+    ],
+    "hooks/relations/gcp-integration/pydocmd.yml": [
+      "interface:gcp-integration",
+      "static",
+      "2d5a524cbde5ccf732b67382a85deb7c26dfb92315c30d26c2b2d5632a2a8f38"
+    ],
+    "hooks/relations/gcp-integration/requires.py": [
+      "interface:gcp-integration",
+      "static",
+      "79c75c6c76b37bc5ac486ac2e14f853223c4c603850d2f231f187ab255cbdbf0"
+    ],
+    "hooks/relations/gcp-integration/tox.ini": [
+      "interface:gcp-integration",
+      "static",
+      "caeace713d04686331d19b2d466e066e4123bd9197152ab99deb1a29a1501502"
+    ],
+    "hooks/relations/http/.gitignore": [
+      "interface:http",
+      "static",
+      "83b4ca18cc39800b1d260b5633cd0252e21501b21e7c33e718db44f1a68a09b8"
+    ],
+    "hooks/relations/http/README.md": [
+      "interface:http",
+      "static",
+      "9c95320ad040745374fc03e972077f52c27e07eb0386ec93ae19bd50dca24c0d"
+    ],
+    "hooks/relations/http/__init__.py": [
+      "interface:http",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/http/interface.yaml": [
+      "interface:http",
+      "static",
+      "d0b64038b85b7791ee4f3a42d73ffc8c208f206f73f899cbf33a519d12f9ad13"
+    ],
+    "hooks/relations/http/provides.py": [
+      "interface:http",
+      "static",
+      "8c72cd8a5a6ea24f53b6dba11f4353c75265bfa7d3ecc2dd096c8963eab8c877"
+    ],
+    "hooks/relations/http/requires.py": [
+      "interface:http",
+      "static",
+      "76cc886368eaf9c2403a6dc46b40531c3f4eaf67b08829f890c57cb645430abd"
+    ],
+    "hooks/relations/keystone-credentials/.gitignore": [
+      "interface:keystone-credentials",
+      "static",
+      "ddc61d479977d318682280fa2b18bcb6cb9a1b0e0e7897cea3d14d5c8d222e68"
+    ],
+    "hooks/relations/keystone-credentials/.gitreview": [
+      "interface:keystone-credentials",
+      "static",
+      "79122a6758c1a504d6caa55ca329e9028caf5d9a52516a4a77be2a1e676d45c8"
+    ],
+    "hooks/relations/keystone-credentials/.zuul.yaml": [
+      "interface:keystone-credentials",
+      "static",
+      "c240e43920d05095cf5a0a9aa648685676c12bdcbb3874b79bbec5b5e7b18b7c"
+    ],
+    "hooks/relations/keystone-credentials/__init__.py": [
+      "interface:keystone-credentials",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/keystone-credentials/copyright": [
+      "interface:keystone-credentials",
+      "static",
+      "7a296596102da98cecee289a195e00d6af44241911321699b3d4d4af93f11893"
+    ],
+    "hooks/relations/keystone-credentials/interface.yaml": [
+      "interface:keystone-credentials",
+      "static",
+      "daa50ddd8948bdd6d6f8838498aa4251219f3bbe23344a05477764e6fc5ca33f"
+    ],
+    "hooks/relations/keystone-credentials/requires.py": [
+      "interface:keystone-credentials",
+      "static",
+      "92d591067b288de5336e6228a2c84be5839354bfd050d7ce84df62c03a813785"
+    ],
+    "hooks/relations/keystone-credentials/test-requirements.txt": [
+      "interface:keystone-credentials",
+      "static",
+      "3558e0b4cd18d77a7710361489d770b83841e7fc35f43a87459f35a346e45415"
+    ],
+    "hooks/relations/keystone-credentials/tox.ini": [
+      "interface:keystone-credentials",
+      "static",
+      "a1b7f99cfd5a6d723f6b5589996a8b3b799850106c709682108d560c69188a78"
+    ],
+    "hooks/relations/kube-control/README.md": [
+      "interface:kube-control",
+      "static",
+      "66ee58f59efceefa21f7f2d7f88c1d75c07a16bbec8d09a83a7fda6373eab421"
+    ],
+    "hooks/relations/kube-control/__init__.py": [
+      "interface:kube-control",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/kube-control/interface.yaml": [
+      "interface:kube-control",
+      "static",
+      "31eb146c6c57959abeaea53d658f1c9437866bafac0409335d2a7187ba495c8e"
+    ],
+    "hooks/relations/kube-control/provides.py": [
+      "interface:kube-control",
+      "static",
+      "e7ade4ef360e43295ab9d10461f5fd0a80d71fcc5ae0c92a87bafadb4154c773"
+    ],
+    "hooks/relations/kube-control/requires.py": [
+      "interface:kube-control",
+      "static",
+      "62689a6e09ec8da5ed58f15103bcf4724ebf6013223767493368b7aeb45d932a"
+    ],
+    "hooks/relations/kube-dns/README.md": [
+      "interface:kube-dns",
+      "static",
+      "cf194a4ac081aa9aad556ab02209d661163e0c62d8474f6a664294ff23752ce5"
+    ],
+    "hooks/relations/kube-dns/__init__.py": [
+      "interface:kube-dns",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/kube-dns/interface.yaml": [
+      "interface:kube-dns",
+      "static",
+      "e4ca8faafe4cce43eed862d35346780df4cba4eb243baaf5aecd891514deb26d"
+    ],
+    "hooks/relations/kube-dns/provides.py": [
+      "interface:kube-dns",
+      "static",
+      "007c4730c822e6c38fe75c3da498089df7c9b14206fa4e2a2c03ab8f560bd54b"
+    ],
+    "hooks/relations/kube-dns/requires.py": [
+      "interface:kube-dns",
+      "static",
+      "9d5439fc555e35ee31643480c9a251c9eff9fc3ad2802dc93b449ba132c5c420"
+    ],
+    "hooks/relations/kubernetes-cni/.gitignore": [
+      "interface:kubernetes-cni",
+      "static",
+      "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e"
+    ],
+    "hooks/relations/kubernetes-cni/README.md": [
+      "interface:kubernetes-cni",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/kubernetes-cni/__init__.py": [
+      "interface:kubernetes-cni",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/kubernetes-cni/interface.yaml": [
+      "interface:kubernetes-cni",
+      "static",
+      "6f48a60ea57731a77af20487c369777910bf324902d34182ebda21450735dc92"
+    ],
+    "hooks/relations/kubernetes-cni/provides.py": [
+      "interface:kubernetes-cni",
+      "static",
+      "eb7cf2a4ea5343be2695cf077c4c04bbb864f00127c3ea12ec22eb15a0e88ced"
+    ],
+    "hooks/relations/kubernetes-cni/requires.py": [
+      "interface:kubernetes-cni",
+      "static",
+      "337d0f86c962ecf3a45ae39be68c51c5c8318d0dcb5e3ad1f9d759a3587e9efa"
+    ],
+    "hooks/relations/nrpe-external-master/README.md": [
+      "interface:nrpe-external-master",
+      "static",
+      "d8ed3bc7334f6581b12b6091923f58e6f5ef62075a095a4e78fb8f434a948636"
+    ],
+    "hooks/relations/nrpe-external-master/__init__.py": [
+      "interface:nrpe-external-master",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/nrpe-external-master/interface.yaml": [
+      "interface:nrpe-external-master",
+      "static",
+      "894f24ba56148044dae5b7febf874b427d199239bcbe1f2f55c3db06bb77b5f0"
+    ],
+    "hooks/relations/nrpe-external-master/provides.py": [
+      "interface:nrpe-external-master",
+      "static",
+      "e6ba708d05b227b139a86be59c83ed95a2bad030bc81e5819167ba5e1e67ecd4"
+    ],
+    "hooks/relations/nrpe-external-master/requires.py": [
+      "interface:nrpe-external-master",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/openstack-integration/.gitignore": [
+      "interface:openstack-integration",
+      "static",
+      "9653f2820c79d92ac3518eedd0e1f43ffec128d5df9216c25d906fcba8ee46b8"
+    ],
+    "hooks/relations/openstack-integration/LICENSE": [
+      "interface:openstack-integration",
+      "static",
+      "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    ],
+    "hooks/relations/openstack-integration/README.md": [
+      "interface:openstack-integration",
+      "static",
+      "ca58e21bd973f6e65f7a8a06b4aeabd50bf137ab6fab9c8defa8789b02df3aa5"
+    ],
+    "hooks/relations/openstack-integration/__init__.py": [
+      "interface:openstack-integration",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/openstack-integration/copyright": [
+      "interface:openstack-integration",
+      "static",
+      "7c0e36e618a8544faaaa3f8e0533c2f1f4a18bcacbdd8b99b537742e6b587d58"
+    ],
+    "hooks/relations/openstack-integration/docs/provides.md": [
+      "interface:openstack-integration",
+      "static",
+      "b2dcdfeed529a4d6c448a7c4a944c6c61bdfb243db87667c0964e9753d83bffa"
+    ],
+    "hooks/relations/openstack-integration/docs/requires.md": [
+      "interface:openstack-integration",
+      "static",
+      "2bcffa7bc7ef67ebd7d93c76715313ccd03a1d801a26063fc54233545d74b90e"
+    ],
+    "hooks/relations/openstack-integration/interface.yaml": [
+      "interface:openstack-integration",
+      "static",
+      "11b07a41bd2e24765231c4b7c7218da15f2173398d8d73698ecb210e599d02f6"
+    ],
+    "hooks/relations/openstack-integration/make_docs": [
+      "interface:openstack-integration",
+      "static",
+      "a564aac288cc0bf4ff14418a341f11b065988c2b64adf93ec451e09dd92dcea5"
+    ],
+    "hooks/relations/openstack-integration/provides.py": [
+      "interface:openstack-integration",
+      "static",
+      "e21337f0b1afe0166446186441a03e15e32d407e240431e65e14f5513d1948c2"
+    ],
+    "hooks/relations/openstack-integration/pydocmd.yml": [
+      "interface:openstack-integration",
+      "static",
+      "3568f8a3c1446dfd736f31050e2b470bf125cc41717d156a4b866c7ea53861be"
+    ],
+    "hooks/relations/openstack-integration/requires.py": [
+      "interface:openstack-integration",
+      "static",
+      "18de47e9a3c20efda183a818b8de12d6a295f61f2499ae17121bc9a5155abdb2"
+    ],
+    "hooks/relations/openstack-integration/tox.ini": [
+      "interface:openstack-integration",
+      "static",
+      "caeace713d04686331d19b2d466e066e4123bd9197152ab99deb1a29a1501502"
+    ],
+    "hooks/relations/public-address/README.md": [
+      "interface:public-address",
+      "static",
+      "7225effe61bfd8571447b8b685a2ecb52be17431b3066a5306330954c4cb064d"
+    ],
+    "hooks/relations/public-address/__init__.py": [
+      "interface:public-address",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/public-address/interface.yaml": [
+      "interface:public-address",
+      "static",
+      "49d6777a54aa84c7d3be8d531be237564e90f2e4cb2be05ef5617a372a382340"
+    ],
+    "hooks/relations/public-address/provides.py": [
+      "interface:public-address",
+      "static",
+      "d0ec89adf658507e6d0a12ba07468230814e27a3b4906480e2851b2d41240c51"
+    ],
+    "hooks/relations/public-address/requires.py": [
+      "interface:public-address",
+      "static",
+      "1b0a6dc9daf4663fcd5d87f4320244a407e5d4d38a1e523d106b4513cd89d687"
+    ],
+    "hooks/relations/sdn-plugin/.gitignore": [
+      "interface:sdn-plugin",
+      "static",
+      "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e"
+    ],
+    "hooks/relations/sdn-plugin/README.md": [
+      "interface:sdn-plugin",
+      "static",
+      "e6af81ec831fa3ad92b86437e018adbaf31f344259e6a10917912828a100f18b"
+    ],
+    "hooks/relations/sdn-plugin/__init__.py": [
+      "interface:sdn-plugin",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/sdn-plugin/interface.yaml": [
+      "interface:sdn-plugin",
+      "static",
+      "bd84be4224a195d61b1b1da9aeb9000637b4e61c413293eee75522d9b4e8137b"
+    ],
+    "hooks/relations/sdn-plugin/provides.py": [
+      "interface:sdn-plugin",
+      "static",
+      "9ada4ccbfd95a09813e6fa2967057e9f6409b7ad03111811bbccaf557dd36c88"
+    ],
+    "hooks/relations/sdn-plugin/requires.py": [
+      "interface:sdn-plugin",
+      "static",
+      "d14fa534ff78e6e3b4e66e0f4c1f6136693e2cc2a35bbac99089db69f19e8a95"
+    ],
+    "hooks/relations/tls-certificates/.gitignore": [
+      "interface:tls-certificates",
+      "static",
+      "b485e74def213c534676224e655e9276b62d401ebc643508ddc545dd335cb6dc"
+    ],
+    "hooks/relations/tls-certificates/README.md": [
+      "interface:tls-certificates",
+      "static",
+      "6851227de8fcca7edfd504159dbe3e3af31080af64df46f3d3b345da7630827a"
+    ],
+    "hooks/relations/tls-certificates/__init__.py": [
+      "interface:tls-certificates",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/tls-certificates/docs/common.md": [
+      "interface:tls-certificates",
+      "static",
+      "25bbabb9b987615d6d66761528aaa44b6d7a07e291258cd4a53b02056bc916ba"
+    ],
+    "hooks/relations/tls-certificates/docs/provides.md": [
+      "interface:tls-certificates",
+      "static",
+      "3792c0d2642634759e75533a1823521f1be52e42833671131c38472f45e28855"
+    ],
+    "hooks/relations/tls-certificates/docs/requires.md": [
+      "interface:tls-certificates",
+      "static",
+      "7f583716ca7dad95bf1d47e5635092d77e370441dcaf76a15c6b41a0436b639a"
+    ],
+    "hooks/relations/tls-certificates/interface.yaml": [
+      "interface:tls-certificates",
+      "static",
+      "e412e54b1d327bad15a882f7f0bf996212090db576b863cc9cff7a68afc0e4fa"
+    ],
+    "hooks/relations/tls-certificates/make_docs": [
+      "interface:tls-certificates",
+      "static",
+      "3671543bddc9d277171263310e404df3f11660429582cb27b39b7e7ec8757a37"
+    ],
+    "hooks/relations/tls-certificates/provides.py": [
+      "interface:tls-certificates",
+      "static",
+      "cd849e40a6bb8c6b336fcf036bc67a9d952034acad80f1d4a4e8ae1f09c0a570"
+    ],
+    "hooks/relations/tls-certificates/pydocmd.yml": [
+      "interface:tls-certificates",
+      "static",
+      "48a233f60a89f87d56e9bc715e05766f5d39bbea2bc8741ed31f67b30c8cfcb8"
+    ],
+    "hooks/relations/tls-certificates/requires.py": [
+      "interface:tls-certificates",
+      "static",
+      "49c87b63ab60350ff622c1245c0bc2af6dc429ae78411a7b0b35ee3c2b094359"
+    ],
+    "hooks/relations/tls-certificates/tls_certificates_common.py": [
+      "interface:tls-certificates",
+      "static",
+      "dce7d7e8289d9e271a967ba758649a9f887fa72dd86992da380442ec314d4447"
+    ],
+    "hooks/relations/tls-certificates/tox.ini": [
+      "interface:tls-certificates",
+      "static",
+      "7ab8ab53e5ed98cfa7fb5c1d5009f84077a4bb76640ba64f561ef7ea3a702eab"
+    ],
+    "hooks/relations/vsphere-integration/.gitignore": [
+      "interface:vsphere-integration",
+      "static",
+      "9653f2820c79d92ac3518eedd0e1f43ffec128d5df9216c25d906fcba8ee46b8"
+    ],
+    "hooks/relations/vsphere-integration/LICENSE": [
+      "interface:vsphere-integration",
+      "static",
+      "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    ],
+    "hooks/relations/vsphere-integration/README.md": [
+      "interface:vsphere-integration",
+      "static",
+      "8de815f0f938cb8f58c536899ed87e55aac507a782093bd50d50bd3c1d6add1c"
+    ],
+    "hooks/relations/vsphere-integration/__init__.py": [
+      "interface:vsphere-integration",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "hooks/relations/vsphere-integration/copyright": [
+      "interface:vsphere-integration",
+      "static",
+      "7c0e36e618a8544faaaa3f8e0533c2f1f4a18bcacbdd8b99b537742e6b587d58"
+    ],
+    "hooks/relations/vsphere-integration/docs/provides.md": [
+      "interface:vsphere-integration",
+      "static",
+      "daa3c44a2df6d774adc60bde1160f1e307129be9d696f018eab4a7e713ee775a"
+    ],
+    "hooks/relations/vsphere-integration/docs/requires.md": [
+      "interface:vsphere-integration",
+      "static",
+      "4e79bb1b151f1de63b423d39a6e1831efbb6f767fe5b84963162f62c6bbb9123"
+    ],
+    "hooks/relations/vsphere-integration/interface.yaml": [
+      "interface:vsphere-integration",
+      "static",
+      "20295b882dfb9a1750d8e988eaa3383cd3109fae510785ba4e415d7fa9b118af"
+    ],
+    "hooks/relations/vsphere-integration/make_docs": [
+      "interface:vsphere-integration",
+      "static",
+      "cd9d91049ee3c6e6148f4bd9204a34463dde905ce665cff25be014ffc1b81b89"
+    ],
+    "hooks/relations/vsphere-integration/provides.py": [
+      "interface:vsphere-integration",
+      "static",
+      "8ccb09c4a3009b59caea227ef40395fb063d3e8ce983338060fb59bbe74138c0"
+    ],
+    "hooks/relations/vsphere-integration/pydocmd.yml": [
+      "interface:vsphere-integration",
+      "static",
+      "9f8eb566569977f10955da67def28886737e80914ae000e4acfae1313d08f105"
+    ],
+    "hooks/relations/vsphere-integration/requires.py": [
+      "interface:vsphere-integration",
+      "static",
+      "d56702f60037f06259752d3bd7882f7ee46f60a4ce7b6d1071520d69ec9351f9"
+    ],
+    "hooks/relations/vsphere-integration/tox.ini": [
+      "interface:vsphere-integration",
+      "static",
+      "caeace713d04686331d19b2d466e066e4123bd9197152ab99deb1a29a1501502"
+    ],
+    "hooks/sdn-plugin-relation-broken": [
+      "kubernetes-master",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/sdn-plugin-relation-changed": [
+      "kubernetes-master",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/sdn-plugin-relation-departed": [
+      "kubernetes-master",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/sdn-plugin-relation-joined": [
+      "kubernetes-master",
+      "dynamic",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/start": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/stop": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/update-status": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/upgrade-charm": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/vsphere-relation-broken": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/vsphere-relation-changed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/vsphere-relation-departed": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "hooks/vsphere-relation-joined": [
+      "kubernetes-master",
+      "static",
+      "2b693cb2a11594a80cc91235c2dc219a0a6303ae62bee8aa87eb35781f7158f7"
+    ],
+    "icon.svg": [
+      "kubernetes-master",
+      "static",
+      "d543b4638e3efc01d5e79b1bc0a0f8f5d42389470fe16f9cdd843f24a26aa560"
+    ],
+    "layer.yaml": [
+      "kubernetes-master",
+      "dynamic",
+      "f67a4b462ea19ea0ca25da2e2e7b9cb32b77916845553b765e57e9792acbe55a"
+    ],
+    "lib/charms/__init__.py": [
+      "kubernetes-master",
+      "static",
+      "4032724b98ed267185b12b8ec78dd9bcb0423ab1c89a6f0dad99397fd51159d9"
+    ],
+    "lib/charms/layer/__init__.py": [
+      "kubernetes-master",
+      "static",
+      "dfe0d26c6bf409767de6e2546bc648f150e1b396243619bad3aa0553ab7e0e6f"
+    ],
+    "lib/charms/layer/basic.py": [
+      "kubernetes-master",
+      "static",
+      "ec4e6b7f9d6892ab74b3541337d1dc1d244ffb2155771841cc9480839f03d4c0"
+    ],
+    "lib/charms/layer/docker.py": [
+      "layer:docker",
+      "static",
+      "f3b609ab4c7e687c7f5cb691aebf0f47afc3d09a3485f3d56a7ed5e74a61969c"
+    ],
+    "lib/charms/layer/execd.py": [
+      "kubernetes-master",
+      "static",
+      "fda8bd491032db1db8ddaf4e99e7cc878c6fb5432efe1f91cadb5b34765d076d"
+    ],
+    "lib/charms/layer/kubernetes_common.py": [
+      "kubernetes-master",
+      "static",
+      "ad51f53506b511dd97fddcf83bfdba33c4528f0a42d79a84fae696b7bc7c9194"
+    ],
+    "lib/charms/layer/options.py": [
+      "kubernetes-master",
+      "static",
+      "8ae7a07d22542fc964f2d2bee8219d1c78a68dace70a1b38d36d4aea47b1c3b2"
+    ],
+    "lib/charms/layer/snap.py": [
+      "kubernetes-master",
+      "static",
+      "79887542042d000b339a3e4bcb506f1aecc269074acc5c0f79562517eeb17c65"
+    ],
+    "lib/charms/layer/tls_client.py": [
+      "kubernetes-master",
+      "static",
+      "cad1b0c6d6d0033e1e9f2281516585ded1f47bcb8e290c37c917ce7e1fc078d1"
+    ],
+    "lib/charms/leadership.py": [
+      "kubernetes-master",
+      "static",
+      "20ffcbbc08147506759726ad51567420659ffb8a2e0121079240b8706658e332"
+    ],
+    "lib/debug_script.py": [
+      "kubernetes-master",
+      "static",
+      "a4d56f2d3e712b1b5cadb657c7195c6268d0aac6d228991049fd769e0ddaf453"
+    ],
+    "metadata.yaml": [
+      "kubernetes-master",
+      "dynamic",
+      "e5fa2038fee872992f1d1ecea4e9879da0ae336e4e560b218e2888c6aa6a15a0"
+    ],
+    "metrics.yaml": [
+      "kubernetes-master",
+      "static",
+      "e708d8d7b918860c4c7e0d3588b432b67a515eb1ad9d3ea7d575edab83b546fd"
+    ],
+    "reactive/__init__.py": [
+      "kubernetes-master",
+      "static",
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "reactive/cdk_service_kicker.py": [
+      "kubernetes-master",
+      "static",
+      "cc2648443016a18324ecb26acb71d69c71610ba23df235f280383552136f7efc"
+    ],
+    "reactive/docker.py": [
+      "layer:docker",
+      "static",
+      "68b6cc02eb2dc97141c84e533fc5d39ef56f8ba5ec8c080b0a1c01cccf2c282d"
+    ],
+    "reactive/kubernetes_master.py": [
+      "kubernetes-master",
+      "static",
+      "e5fe14759b994348ca67dc3be9deddd249635489459460c7baac3e32329c3580"
+    ],
+    "reactive/leadership.py": [
+      "kubernetes-master",
+      "static",
+      "e2b233cf861adc3b2d9e9c062134ce2f104953f03283cdddd88f49efee652e8f"
+    ],
+    "reactive/snap.py": [
+      "kubernetes-master",
+      "static",
+      "d2267b8b8feb0b0869cb5611c015d20a75996ee62b82182aca37f57c5f0fb3f3"
+    ],
+    "reactive/tls_client.py": [
+      "kubernetes-master",
+      "static",
+      "b257fee4024a1e8fb4319c64b17d88641c94d1bf0ffe240e192a0aa2a6bf3982"
+    ],
+    "requirements.txt": [
+      "kubernetes-master",
+      "static",
+      "0f1c70d27e26005a96d66ad54482877ae20f7737693c833e29dd72bd6ac24892"
+    ],
+    "revision": [
+      "kubernetes-master",
+      "static",
+      "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    ],
+    "scripts/enable_grub_cgroups.sh": [
+      "layer:docker",
+      "static",
+      "08f39868716900be03e2612a63d5fbbd661599484f05f5164c5d794415cfa260"
+    ],
+    "templates/cdk-service-kicker": [
+      "kubernetes-master",
+      "static",
+      "b17adff995310e14d1b510337efa0af0531b55e2c487210168829e0dc1a6f99b"
+    ],
+    "templates/cdk-service-kicker.service": [
+      "kubernetes-master",
+      "static",
+      "c2d3977fa89d453f0f13a8a823621c44bb642ec7392d8b7462b631864f665029"
+    ],
+    "templates/ceph-secret.yaml": [
+      "kubernetes-master",
+      "static",
+      "cf38a4f47dd3399f5a07f16e889dfc755fcf63541e0b8e0e6936b5993f360b44"
+    ],
+    "templates/ceph.conf": [
+      "kubernetes-master",
+      "static",
+      "63d2a3751ea00ae8ccce61d642735f949031595e1a170aa1830105f1cd3c7266"
+    ],
+    "templates/create-namespace.yaml.j2": [
+      "kubernetes-master",
+      "static",
+      "8ace952fc7f873b0ec2c0f9843a3e39023e20da5397d799c442a78749aa96239"
+    ],
+    "templates/device-plugin-ds.yaml": [
+      "kubernetes-master",
+      "static",
+      "bbf58af902de06fbcb0c0a271b0c144889f7bead24224eebcf721c5f6002bd4b"
+    ],
+    "templates/device-plugin-rbac.yaml": [
+      "kubernetes-master",
+      "static",
+      "981090f6d817c929bb460355b0ed9d7869b7585a5b7d7db97f44af655264e482"
+    ],
+    "templates/docker.defaults": [
+      "layer:docker",
+      "static",
+      "f8bd601c9c79b482665b2d9fd195fecd5ea962812d7017111fb5614d1a58a023"
+    ],
+    "templates/docker.systemd": [
+      "layer:docker",
+      "static",
+      "7a89328c7d18d542d1dcd3a5c43ad6d7e5e4bb5fe1a73c08ff53046bdf39c5dd"
+    ],
+    "templates/gpushare-sche-extender.service": [
+      "kubernetes-master",
+      "static",
+      "5a74bae8d15733a942378926b728ad08c75f5cc83de9788f58c7e6acfae68f3a"
+    ],
+    "templates/keystone-api-server-webhook.yaml": [
+      "kubernetes-master",
+      "static",
+      "57d856c3e55fbfddf08a3952c3a4864713c345f6a4fe42aa4861429c85af8de8"
+    ],
+    "templates/kube-keystone.sh": [
+      "kubernetes-master",
+      "static",
+      "243082ce2aeb51183545e543779d41f63a795d420301c4e8322f7255cf0c9990"
+    ],
+    "templates/kubescheduler-args": [
+      "kubernetes-master",
+      "static",
+      "d918de0024ffbfb5d76c9bbbdd51ab80aebe15016de28ebe077c9de4d72a5dd5"
+    ],
+    "templates/rbac-proxy.yaml": [
+      "kubernetes-master",
+      "static",
+      "ae524f933b68a03c7ef4729481fb1322a944bf8b05daeb36991fc09ef023c189"
+    ],
+    "templates/rbd-persistent-volume.yaml": [
+      "kubernetes-master",
+      "static",
+      "bdee575ef92912dda50d2e82aafab359168aac32a78de2bd9131bcb554669966"
+    ],
+    "templates/scheduler-policy-config.json": [
+      "kubernetes-master",
+      "static",
+      "0ece38414b2abc95457d2c36752f26361d2a0cd4d4f340f9dd56e55c923d74ec"
+    ],
+    "templates/service-always-restart.systemd-229.conf": [
+      "kubernetes-master",
+      "static",
+      "516958fbf8b9a05cc86f6700d0de7bdc6b2ba1847d69fbe1214e23b52e00b064"
+    ],
+    "templates/service-always-restart.systemd-latest.conf": [
+      "kubernetes-master",
+      "static",
+      "37de98817682363d48b3dd2b635f5cfb281533aaa9d3836d1af44f9d6a59984c"
+    ],
+    "tox.ini": [
+      "kubernetes-master",
+      "static",
+      "00b57a776ac313e92a52daa05d1fdb6056c21b3105b643d32610fd937664321b"
+    ],
+    "version": [
+      "kubernetes-master",
+      "dynamic",
+      "fc76ac5e8aa0907bcd09f24c7fd2bea40674cc34ba13294acb7ec519f96daf7d"
+    ],
+    "wheelhouse/Jinja2-2.10.1.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "065c4f02ebe7f7cf559e49ee5a95fb800a9e4528727aec6f24402a5374c65013"
+    ],
+    "wheelhouse/Jinja2-2.10.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "f84be1bb0040caca4cea721fcbbbbd61f9be9464ca236387158b0feea01914a4"
+    ],
+    "wheelhouse/MarkupSafe-1.1.0.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "4e97332c9ce444b0c2c38dd22ddc61c743eb208d916e4265a2a3b575bdccb1d3"
+    ],
+    "wheelhouse/MarkupSafe-1.1.1.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"
+    ],
+    "wheelhouse/PyYAML-3.13.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "3ef3092145e9b70e3ddd2c7ad59bdd0252a94dfe3949721633e41344de00a6bf"
+    ],
+    "wheelhouse/PyYAML-5.1.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "436bc774ecf7c103814098159fbb84c2715d25980175292c648f2da143909f95"
+    ],
+    "wheelhouse/Tempita-0.5.2.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "cacecf0baa674d356641f1d406b8bff1d756d739c46b869a54de515d08e6fc9c"
+    ],
+    "wheelhouse/certifi-2019.3.9.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "b26104d6835d1f5e49452a26eb2ff87fe7090b89dfcaee5ea2212697e1e1d7ae"
+    ],
+    "wheelhouse/chardet-3.0.4.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"
+    ],
+    "wheelhouse/charmhelpers-0.19.13.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "aaaf472ceaf03bec041b7a22ce9f43314e43bb673354942ef70d6708bbcb875a"
+    ],
+    "wheelhouse/charmhelpers-0.19.4.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "3ada717de7911d6b1b7a3b420deec7ec4b0e709c2c18c71b516cc41181f41391"
+    ],
+    "wheelhouse/charms.docker-0.1.19.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "735160e795894e6a007f333a5b755003db1825f4c67b0aaab8f16269656564eb"
+    ],
+    "wheelhouse/charms.reactive-1.1.2.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "ce86a2273d070478160a236e2dfb9f68a0ea9b79923c65b2b17692b1d73b63b3"
+    ],
+    "wheelhouse/charms.reactive-1.2.1.tar.gz": [
+      "layer:basic",
+      "dynamic",
+      "011cc5141d2c1c488c1e54b8b3d56f91d48f72b7c3202f1027ab3d0666242503"
+    ],
+    "wheelhouse/charms.templating.jinja2-1.0.2.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "8193c6a1d40bdb66fe272c359b4e4780501c658acfaf2b1118c4230927815fe2"
+    ],
+    "wheelhouse/idna-2.8.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407"
+    ],
+    "wheelhouse/netaddr-0.7.19.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "38aeec7cdd035081d3a4c306394b19d677623bf76fa0913f6695127c7753aefd"
+    ],
+    "wheelhouse/pip-8.1.2.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "4d24b03ffa67638a3fa931c09fd9e0273ffa904e95ebebe7d4b1a54c93d7b732"
+    ],
+    "wheelhouse/pyaml-18.11.0.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "b96292cc409e0f222b6fecff96afd2e19cfab5d1f2606344907751d42301263a"
+    ],
+    "wheelhouse/pyaml-19.4.1.tar.gz": [
+      "layer:basic",
+      "dynamic",
+      "c79ae98ececda136a034115ca178ee8bf3aa7df236c488c2f55d12f177b88f1e"
+    ],
+    "wheelhouse/requests-2.22.0.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4"
+    ],
+    "wheelhouse/setuptools-20.0.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "a6f7b295f399fed3de918c4bea9e2053a5fbd9e3a55a6fef7aafe9d1f474866d"
+    ],
+    "wheelhouse/setuptools-39.0.1.zip": [
+      "kubernetes-master",
+      "static",
+      "bec7badf0f60e7fc8153fac47836edc41b74e5d541d7692e614e635720d6a7c7"
+    ],
+    "wheelhouse/setuptools_scm-1.17.0.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "70a4cf5584e966ae92f54a764e6437af992ba42ac4bca7eb37cc5d02b98ec40a"
+    ],
+    "wheelhouse/six-1.11.0.tar.gz": [
+      "kubernetes-master",
+      "static",
+      "70e8a77beed4562e7f14fe23a786b54f6296e34344c23bc42f07b15018ff98e9"
+    ],
+    "wheelhouse/six-1.12.0.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"
+    ],
+    "wheelhouse/urllib3-1.25.3.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "dbe59173209418ae49d485b87d1681aefa36252ee85884c31346debd19463232"
+    ],
+    "wheelhouse/vcversioner-2.16.0.0.tar.gz": [
+      "layer:docker",
+      "dynamic",
+      "dae60c17a479781f44a4010701833f1829140b1eeccd258762a74974aa06e19b"
+    ]
+  }
+}
