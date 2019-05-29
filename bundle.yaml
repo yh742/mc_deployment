@@ -31,13 +31,14 @@ services:
       - "0"
   kubernetes-master:
     charm: ./kubernetes-master-522
-    num_units: 1
+    num_units: 2
     options:
       channel: 1.12/stable
       allow-privileged: "true"
       enable-nvidia-plugin: "false"
     to: 
       - "1"
+      - "4"
   kubernetes-worker:
     charm: ./kubernetes-worker-378
     expose: true
@@ -127,14 +128,17 @@ relations:
 machines:
   "0":
     series: xenial
-    constraints: arch=amd64 tags=test-sean
+    constraints: arch=amd64 tags=test-sean,kaux
   "1":
     series: xenial
-    constraints: arch=amd64 tags=test-sean
+    constraints: arch=amd64 tags=test-sean,kmaster
   "2":
     series: xenial
-    constraints: arch=amd64 tags=test-sean
+    constraints: arch=amd64 tags=test-sean,kworker
   "3":
     series: xenial
-    constraints: arch=amd64 tags=test-sean,gpu
-      
+    constraints: arch=amd64 tags=test-sean,gpu,kworker
+  "4":
+    series: xenial
+    constraints: arch=amd64 tags=test-sean,kmaster
+ 

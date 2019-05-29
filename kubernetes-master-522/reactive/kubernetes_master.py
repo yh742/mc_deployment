@@ -2003,6 +2003,7 @@ def enable_gpu_sharing():
    ''' enables gpu sharing in kubernetes '''
    load_gpu_plugin = hookenv.config('enable-nvidia-plugin').lower()
    gpuEnable = load_gpu_plugin == "auto" and is_state('kubernetes=master.gpu.enabled')
+   is_leader = is_state('leadership.is_leader')
    if gpuEnable:
       hookenv.status_set('blocked','Nvidia device plugin must be disabled')
       return  
@@ -2013,10 +2014,12 @@ def enable_gpu_sharing():
          hookenv.status_set('maintenance', 'gpusharing service not up!')
          remove_state('gpusharing.configured')
          return
-      gpusharing_apply_device_plugin()
-      set_state('gpusharing.configured')
+      if is_leader:
+        gpusharing_apply_device_plugin()
+        set_state('gpusharing.configured')
 
 @when('gpusharing.configured')
+@when('leadership.is_leader')
 def gpusharing_label_nodes():
    kubectl='/snap/kubectl/current/kubectl'
    nodes=check_output([kubectl,'get','nodes','-o','name'])
