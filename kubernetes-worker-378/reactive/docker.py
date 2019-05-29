@@ -260,6 +260,7 @@ def install_from_upstream_apt():
 def install_from_nvidia_apt():
     ''' Install cuda docker from the nvidia apt repository. '''
     status_set('maintenance', 'Installing docker-engine from Nvidia PPA.')
+    apt_install(['apt-transport-https'])
     # Get the server and key in the apt-key management tool.
     add_apt_key("9DC858229FC7DD38854AE2D88D81803C0EBFCD88")
     # Install key for nvidia-docker. This key changes frequently
@@ -298,7 +299,7 @@ def install_from_nvidia_apt():
     nvidia_docker2 = hookenv.config('nvidia-docker-package')
     nv_container_runtime = hookenv.config('nvidia-container-runtime-package')
     apt_install(['cuda-drivers', docker_ce, nvidia_docker2,
-                 nv_container_runtime], options=['--allow-unauthenticated'],fatal=True)
+                 nv_container_runtime],fatal=True)
 
 
 def install_cuda_drivers_repo(architecture, rel, ubuntu):

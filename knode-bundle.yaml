@@ -39,7 +39,7 @@ services:
     to: 
       - "1"
   kubernetes-worker:
-    charm: ./kubernetes-worker-378
+    charm: cs:~containers/kubernetes-worker-378
     expose: true
     num_units: 2
     options:
@@ -48,7 +48,7 @@ services:
 #      cuda_repo: 10.0.130-1
 #      nvidia-docker-package: nvidia-docker2=2.0.3+docker18.09.1-1
 #      nvidia-container-runtime-package: nvidia-container-runtime=2.0.0+docker18.09.1-1
-#      docker-ce-package: docker-ce=5:18.09.1~3-0~ubuntu-xenial
+#      docker-ce-package: docker-ce=6:18.09.1~3-0~ubuntu-xenial
     to:
       - "2"
       - "3"
@@ -80,14 +80,14 @@ relations:
 machines:
   "0":
     series: xenial
-    constraints: arch=amd64 tags=test-sean
+    constraints: arch=amd64 tags=test-sean,kaux
   "1":
     series: xenial
-    constraints: arch=amd64 tags=test-sean
+    constraints: arch=amd64 tags=test-sean,kmaster
   "2":
     series: xenial
-    constraints: arch=amd64 tags=test-sean
+    constraints: arch=amd64 tags=test-sean,kworker
   "3":
     series: xenial
-    constraints: arch=amd64 tags=test-sean,gpu
+    constraints: arch=amd64 tags=test-sean,gpu,kworker
       
