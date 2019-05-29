@@ -1,4 +1,0 @@
-name: kube-control
-summary: Provides master-worker communication.
-version: 1
-maintainer: "Tim Van Steenburgh <tim.van.steenburgh@canonical.com>"
