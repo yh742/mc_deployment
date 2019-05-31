@@ -44,6 +44,7 @@ services:
     charm: cs:~containers/kubernetes-worker-378
     expose: true
     num_units: 2
+    constraints: tags=kworker
     options:
       channel: 1.12/stable
       allow-privileged: "true"
@@ -139,11 +140,4 @@ machines:
     constraints: arch=amd64 tags=kmaster
   "2":
     series: xenial
-    constraints: arch=amd64 tags=kmaster
-  "3":
-    series: xenial
-    constraints: arch=amd64 tags=kworker
-  "4":
-    series: xenial
-    constraints: arch=amd64 tags=kworker
- 
+    constraints: arch=amd64 tags=kmaster 
