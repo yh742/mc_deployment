@@ -133,17 +133,17 @@ relations:
 machines:
   "0":
     series: xenial
-    constraints: arch=amd64 tags=test-sean,kaux
+    constraints: arch=amd64 tags=kaux
   "1":
     series: xenial
-    constraints: arch=amd64 tags=test-sean,kmaster
+    constraints: arch=amd64 tags=kmaster
   "2":
     series: xenial
-    constraints: arch=amd64 tags=test-sean,kmaster
+    constraints: arch=amd64 tags=kmaster
   "3":
     series: xenial
-    constraints: arch=amd64 tags=test-sean,kworker
+    constraints: arch=amd64 tags=kworker
   "4":
     series: xenial
-    constraints: arch=amd64 tags=test-sean,gpu,kworker
+    constraints: arch=amd64 tags=kworker
  
