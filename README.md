@@ -37,7 +37,7 @@ juju deploy bundle.yaml
 ```
 You should see the following when the cluster is up:
 
-![alt text](https://github.com/yh742/mc_deployment/blob/master/Screen%20Shot%202019-05-31%20at%202.02.30%20PM.png)
+![alt text](https://github.com/yh742/mc_deployment/blob/master/success.png)
 
 Once the cluster is up, you can patch the storage so that the correct number of PG and replications size is applied on the pools. 
 ```
