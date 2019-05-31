@@ -39,7 +39,7 @@ You should see the following when the cluster is up:
 
 ![alt text](https://github.com/yh742/mc_deployment/blob/master/success.png)
 
-Once the cluster is up, you can patch the storage so that the correct number of PG and replications size is applied on the pools. 
+Once the cluster is up, you can patch the storage so that the correct number of PG and replications size is applied on the pools. You might want to verify the PG num, PGP num, and replication size after this gets applied.
 ```
 ./patch-storage.sh
 ```
