@@ -26,8 +26,8 @@ This is a test deployment of Kubernetes, Elastic Stack, and Ceph
 | elasticsearch | 1 | elasticsearch |
 | topbeat | N/A (Subordinate Charm) | N/A |
 | filebeat | N/A (Subordinate Charm) | N/A |
-| easyrsa | N/A (Shared w/ klb) | kaux |
-| etcd | N/A (Shared w/ kubernetes-master) | kmaster |
+| easyrsa | N/A (Shared w/ klb) | N/A |
+| etcd | N/A (Shared w/ kubernetes-master) | N/A |
 | flannel | N/A (Subordinate Charm) | N/A |
 
 ## Instructions
