@@ -31,7 +31,7 @@ This is a test deployment of Kubernetes, Elastic Stack, and Ceph
 | flannel | N/A (Subordinate Charm) | N/A |
 
 ## Instructions
-Everything is included in the package, so when you are ready, issue the following commands in the command prompt:
+All commands below are issued from where the juju client resides. Everything is included in the package, so when you are ready, issue the following commands in the command prompt:
 ```
 juju deploy bundle.yaml
 ```
@@ -42,4 +42,6 @@ You should see the following when the cluster is up:
 Once the cluster is up, you can patch the storage so that the correct number of PG and replications size is applied on the pools. You might want to verify the PG num, PGP num, and replication size after this gets applied.
 ```
 ./patch-storage.sh
+./master-mount.sh
 ```
+
