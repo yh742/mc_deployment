@@ -42,6 +42,8 @@ You should see the following when the cluster is up:
 Once the cluster is up, you can patch the storage so that the correct number of PG and replications size is applied on the pools. You might want to verify the PG num, PGP num, and replication size after this gets applied.
 ```
 ./patch-storage.sh
+```
+You can also allow the master nodes in this cluster to mount Ceph by executing the script below. Do this after you patch the storage to the correct size.
+```
 ./master-mount.sh
 ```
-
