@@ -7,13 +7,19 @@ echo $mon
 echo $masters
 echo $ips
 
-juju ssh $mon "sudo apt-get install -y ceph-deploy"
+juju ssh $mon <<EOF
+sudo apt-get install -y ceph-deploy
+yes y | ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa
+sudo rm ~/.ssh/config
+echo "Host *" > ~/.ssh/config
+echo "     StrictHostKeyChecking no" >> ~/.ssh/config
+sudo chmod 400 ~/.ssh/config
+EOF
 
 # x in master node number
 for x in $masters
 do
 juju ssh $x <<EOF 
-yes y | ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa
 sudo mkdir /etc/ceph
 sudo chmod -R 777 /etc/ceph
 sudo apt-get install -y ceph-fuse
@@ -25,6 +31,7 @@ for x in $ips
 do 
 juju ssh $mon <<EOF
 cd /etc/ceph
+sudo chmod -R 777 /etc/ceph/
 ceph-deploy install $x
 ceph-deploy --overwrite-conf admin $x
 EOF
