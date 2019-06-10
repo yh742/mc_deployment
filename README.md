@@ -39,7 +39,9 @@ You should see the following when the cluster is up:
 
 ![alt text](https://github.com/yh742/mc_deployment/blob/master/success.png)
 
-Once the cluster is up, you can patch the storage so that the correct number of PG and replications size is applied on the pools. You might want to verify the PG num, PGP num, and replication size after this gets applied.
+Once the cluster is up, you should be able to apply some scripts to the cluster, which is located under the scripts folder. 
+
+You can patch the storage so that the correct number of PG and replications size is applied on the pools. It might be a good idea to verify the PG num, PGP num, and replication size after this gets applied.
 ```
 ./patch-storage.sh
 ```
@@ -47,7 +49,7 @@ You can also allow the master nodes in this cluster to mount Ceph by executing t
 ```
 ./master-mount.sh
 ```
-Finally, some option commands: 
+Finally, some optional commands: 
 
 Loading some builtin dashboard components in Kibana by applying:
 ```
