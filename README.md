@@ -43,9 +43,9 @@ Once the cluster is up, you should be able to apply some scripts to the cluster,
 
 You can patch the storage so that the correct number of PG and replications size is applied on the pools. It might be a good idea to verify the PG num, PGP num, and replication size after this gets applied.
 ```
-./patch-storage.sh
+./patch-storage.sh 
 ```
-You can also allow the master nodes in this cluster to mount Ceph by executing the script below. Do this after you patch the storage to the correct size.
+This script will automatically calculate the placement group based on number of monitor nodes, replication size (default to 2 if number argument not specified), and the number of pool (always 4 in our configuration). You can also allow the master nodes in this cluster to mount Ceph by executing the script below. Do this after you patch the storage to the correct size.
 ```
 ./master-mount.sh
 ```
