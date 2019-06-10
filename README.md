@@ -47,7 +47,14 @@ You can also allow the master nodes in this cluster to mount Ceph by executing t
 ```
 ./master-mount.sh
 ```
-Finally, you can load some builtin dashboard components in Kibana by applying:
+Finally, some option commands: 
+
+Loading some builtin dashboard components in Kibana by applying:
 ```
 juju run-action --wait kibana/0 load-dashboard dashboard=beats
 ```
+Adding a public key to the cluster for tenant access:
+```
+./add-key.sh id_rsa.pub
+```
+
