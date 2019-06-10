@@ -3,6 +3,12 @@ mon=$(juju status | grep ceph-mon/0 | awk '{ print $4 }')
 masters=$(juju status | grep kubernetes-master/ | awk '{ print $4}')
 ips=$(juju status | grep kubernetes-master/ | awk '{ print $5}')
 
+if [ -z $mon ] ||  [ -z $masters ] || [ -z $ips ] 
+then
+	echo "Required nodes aren't found"
+	exit
+fi
+
 echo $mon
 echo $masters
 echo $ips
