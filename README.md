@@ -59,4 +59,7 @@ Adding a public key to the cluster for tenant access:
 ```
 ./add-key.sh id_rsa.pub
 ```
-
+Adding a cron job to clean out log files from tenants (this delete logs older than 7 days at 2am daily):
+```
+./install-cron.sh
+```
