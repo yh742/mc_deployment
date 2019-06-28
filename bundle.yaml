@@ -37,6 +37,10 @@ services:
       channel: 1.12/stable
       allow-privileged: "true"
       enable-nvidia-plugin: "false"
+      enable-gpusharing: "true"
+      enable-lb: "true"
+      lb-start-ip: "172.27.100.73" 
+      lb-end-ip: "172.27.100.83"
     to: 
       - "1"
       - "2"

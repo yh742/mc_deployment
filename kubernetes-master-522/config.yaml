@@ -377,7 +377,23 @@
     "default": ""
   "enable-gpusharing":
     "type": "boolean"
-    "default": !!bool "true"
+    "default": !!bool "false"
     "description": |
       Enables gpusharing on clusters with gpu nodes.
       For more info, please refer to https://github.com/AliyunContainerService/gpushare-scheduler-extender
+  "enable-lb":
+    "type": "boolean"
+    "default": !!bool "false"
+    "description": |
+      Metal LB for bare metal environments.
+      For more info, please refer to https://github.com/danderson/metallb
+  "lb-start-ip":
+    "type": "string"
+    "default": ""
+    "description": |
+      Starting address of ip range for loadbalancer to use.
+  "lb-end-ip":
+    "type": "string"
+    "default": ""
+    "description": |
+      Ending address of ip range for loadbalancer to use.
