@@ -30,4 +30,4 @@ then
     exit
 fi
 
-juju deploy bundle.yaml
+juju deploy bundle-k8s.yaml

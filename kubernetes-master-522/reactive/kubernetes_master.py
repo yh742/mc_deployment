@@ -846,10 +846,9 @@ def configure_cdk_addons():
 
     # adding loadbalancer
     lb = {}
-    lb['enable-lb'] = hookenv.config('enable-lb')
-    if lb['enable-lb']:
-        lb['lb-start-ip'] = hookenv.config('lb-start-ip')
-        lb['lb-end-ip'] = hookenv.config('lb-end-ip')
+    lb['enable-lb'] = str(hookenv.config('enable-lb')).lower()
+    lb['lb-start-ip'] = str(hookenv.config('lb-start-ip'))
+    lb['lb-end-ip'] = str(hookenv.config('lb-end-ip'))
     
     args = [
         'arch=' + arch(),
@@ -869,11 +868,12 @@ def configure_cdk_addons():
         'keystone-cert-file=' + keystone.get('cert', ''),
         'keystone-key-file=' + keystone.get('key', ''),
         'keystone-server-url=' + keystone.get('url', ''),
-        'keystone-server-ca=' + keystone.get('keystone-ca', '')
-        'enable-lb=' + lb['enabled-lb'],
-        'lb-start-ip=' + lb['lb-start-ip'],
-        'lb-end-ip=' + lb['lb-end-ip'],
+        'keystone-server-ca=' + keystone.get('keystone-ca', ''),
+        'enable-lb=' + lb.get('enable-lb',''),
+        'lb-start-ip=' + lb.get('lb-start-ip',''),
+        'lb-end-ip=' + lb.get('lb-end-ip',''),
     ]
+    
     check_call(['snap', 'set', 'cdk-addon-mod'] + args)
     if not addons_ready():
         remove_state('cdk-addons.configured')
